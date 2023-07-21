@@ -1,14 +1,14 @@
-#include <HardwareSerial.h>
-
 void setup() {
-    // Arduino Serial to be set to the same baud rate
-    Serial.begin(9600);
-    delay(100);
+  // Same as ESP32 baud rate
+  Serial.begin(9600);
+  delay(100);
 }
 
-void loop()
-{
-    String mssage = "sent from esp32";
-    Serial.println(mssage);
-    delay(500);
+void loop() {
+  if (Serial.available()) {
+    String received = Serial.readStringUntil('\n');
+    Serial.println(received);
+  }
+
+  delay(100);
 }
