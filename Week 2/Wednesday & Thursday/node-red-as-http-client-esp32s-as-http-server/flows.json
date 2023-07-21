@@ -1,0 +1,290 @@
+[
+    {
+        "id": "92ea1e66bdf49355",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c5687d2c18b097e3",
+        "type": "http request",
+        "z": "92ea1e66bdf49355",
+        "name": "192.168.4.1:80",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.4.1:80",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "2c42c1dfb990450c"
+            ]
+        ]
+    },
+    {
+        "id": "2c42c1dfb990450c",
+        "type": "debug",
+        "z": "92ea1e66bdf49355",
+        "name": "device-specifiations",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1fb0333ccdcdc89e",
+        "type": "http request",
+        "z": "92ea1e66bdf49355",
+        "name": "/potentiomter",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.4.1/potentiomter",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "6ffcd91c8c29a096"
+            ]
+        ]
+    },
+    {
+        "id": "6ffcd91c8c29a096",
+        "type": "debug",
+        "z": "92ea1e66bdf49355",
+        "name": "potentiometer-reading",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f82a08705bd679a5",
+        "type": "http request",
+        "z": "92ea1e66bdf49355",
+        "name": "/buzzer-on",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.4.1/buzzer-on",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "73b4e26237ebe17a"
+            ]
+        ]
+    },
+    {
+        "id": "73b4e26237ebe17a",
+        "type": "debug",
+        "z": "92ea1e66bdf49355",
+        "name": "buzzer-state",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d543ec4dbf24bb79",
+        "type": "inject",
+        "z": "92ea1e66bdf49355",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "c5687d2c18b097e3"
+            ]
+        ]
+    },
+    {
+        "id": "19c9e70ca660fb98",
+        "type": "inject",
+        "z": "92ea1e66bdf49355",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "1fb0333ccdcdc89e"
+            ]
+        ]
+    },
+    {
+        "id": "2d5b463dd49bb2be",
+        "type": "inject",
+        "z": "92ea1e66bdf49355",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "f82a08705bd679a5"
+            ]
+        ]
+    },
+    {
+        "id": "2c0410896d6b687f",
+        "type": "inject",
+        "z": "92ea1e66bdf49355",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "41e04a353381b96c"
+            ]
+        ]
+    },
+    {
+        "id": "41e04a353381b96c",
+        "type": "http request",
+        "z": "92ea1e66bdf49355",
+        "name": "/red-light-on",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.4.1/red-light-on",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 440,
+        "wires": [
+            [
+                "8dda2bc18190f3ed"
+            ]
+        ]
+    },
+    {
+        "id": "8dda2bc18190f3ed",
+        "type": "debug",
+        "z": "92ea1e66bdf49355",
+        "name": "red-light-state",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 500,
+        "wires": []
+    }
+]
