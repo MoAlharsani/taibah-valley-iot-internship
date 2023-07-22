@@ -3,8 +3,8 @@
 #include <ArduinoJson.h>
 #include <WiFi.h>
 
-const char *SSID = "OnePlus 6T";
-const char *PWD = "12345@MM";
+const char *SSID = "SSID";
+const char *PWD = "PASSWORD";
 
 // serverUrls[1] is not on node-red, so it will turn led on for alerting
 const char* serverUrls[] = {
