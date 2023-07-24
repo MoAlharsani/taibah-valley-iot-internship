@@ -47,3 +47,7 @@ You can use Grafana to create a dashboard and visualize the sensor data received
 4. Customize the dashboard with graphs, charts, or other visualizations as per your requirements.
 
 5. The dashboard will now show real-time sensor data received from the ESP32 via MQTT.
+
+| ![Dashboard Example](dashboard.png) |
+|:----------------------------------:|
+
