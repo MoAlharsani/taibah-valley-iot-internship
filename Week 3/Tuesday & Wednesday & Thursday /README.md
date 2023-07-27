@@ -1,14 +1,15 @@
 # Install Node-Red on AWS EC2 instance, and establishing MQTT connection between ESP32s and AWS IoT core
 
-[Click here to go to the MQTT connection section](#mqtt-connection-esp32s-and-aws-iot-as-client-with-aws-iot-broker)
+
+* [MQTT connection section](#mqtt-connection-esp32s-and-aws-iot-as-client-with-aws-iot-broker)
+* [Node-Red on AWS EC2 instance](#install-node-red-on-aws-ec2-instance)
+* [Five Amazon Web Services](#amazon-web-services)
 
 
-### Install Node-Red on AWS EC2 Instance
+## Install Node-Red on AWS EC2 Instance
 
 In this part, we will set up an Amazon EC2 instance and install Node-Red on it. Amazon EC2 (Elastic Compute Cloud) provides scalable computing capacity 
 in the cloud, and Node-Red is a flow-based programming tool that allows us to easily connect devices, APIs, and online services.
-
-## Install Node-Red on AWS EC2 Instance
 
 1. **Create an AWS EC2 Instance:**
    - Sign in to your AWS account and navigate to the EC2 dashboard.
@@ -78,7 +79,7 @@ In this task, we will establish an MQTT connection between ESP32 devices and AWS
 
 2. **Upload the Sketch:**
    - Use the Arduino IDE or any compatible IDE to upload the sketch to the ESP32.
-   - Modify the sketch to include your WiFi SSID, password, and AWS IoT Core endpoint (e.g., `a341dgduqrqsfy-ats.iot.eu-west-3.amazonaws.com`).
+   - Modify the sketch to include your WiFi SSID, password, and AWS IoT Core endpoint (e.g., `XXXXXXXXX-ats.iot.eu-west-3.amazonaws.com`).
      
 2. **Set Policies:**
    - Attach appropriate policies to the X.509 certificates used by your ESP32 devices as in the file certificates.h
@@ -100,4 +101,89 @@ In this task, we will establish an MQTT connection between ESP32 devices and AWS
    - You can also subscribe to specific MQTT topics to receive commands or updates from AWS IoT Core.
 
 Once the ESP32 devices are running the MQTT client and connected to AWS IoT Core, they will securely publish sensor data to AWS IoT Core. The data can be further processed, stored, or visualized using AWS services or integrated with other applications.
+#### Message published by the ESP32s on AWS IoT core
+| ![Dashboard Example](img/aws_subsribed_mq2.png) |
+|:----------------------------------:|
+#### Message published by AWS IoT on ESP32s serial
+| ![Dashboard Example](img/published_by_aws.png) |
+|:----------------------------------:|
+
+
+## Amazon Web Services 
+
+### Amazon S3 (Simple Storage Service)
+
+**Description:**
+Amazon S3 is a highly durable and secure object storage service. It allows users to store and retrieve large amounts of data at any time. S3 is designed for high availability and redundancy, making it suitable for various data storage and backup needs.
+
+**Use Cases:**
+- Cloud-native application data storage.
+- Data backups and archiving.
+- Media storage and distribution.
+- Content delivery for websites and applications.
+
+**Companies Using S3:**
+- Reddit: Uses Amazon S3 for storing images, videos, and other user-generated content.
+- Airbnb: Leverages S3 for storing images and media assets related to property listings.
+- Slack: Utilizes S3 to store user files and attachments.
+
+  
+
+### Amazon VPC (Virtual Private Cloud)
+
+**Description:**
+Amazon VPC is a virtual private network that allows users to create a logically isolated section within the AWS cloud. It enables users to control their virtual network environment, including IP addresses, subnets, and security groups.
+
+**Use Cases:**
+- Isolating application resources and data securely.
+- Creating multi-tier architectures for complex applications.
+- Extending on-premises networks to the cloud using VPN connections.
+
+**Companies Using VPC:**
+- Adobe: Utilizes Amazon VPC for deploying and managing their cloud-based creative solutions.
+- General Electric: Leverages VPC for securely deploying and managing industrial IoT applications.
+  
+
+### Amazon CloudFront
+
+**Description:**
+Amazon CloudFront is a content delivery network (CDN) service that accelerates the delivery of content, including web pages, videos, images, and other assets, to users worldwide. It helps reduce latency and improve website and application performance.
+
+**Use Cases:**
+- Content delivery for websites and web applications.
+- Video streaming and on-demand content delivery.
+- Accelerating static and dynamic content.
+
+**Companies Using CloudFront:**
+- Airbnb: Utilizes Amazon CloudFront for faster and reliable delivery of property images and media assets.
+- Spotify: Uses CloudFront for delivering music and media content to users globally.
+
+
+### Amazon SNS (Simple Notification Service)
+
+**Description:**
+Amazon SNS is a fully managed messaging service that enables the distribution of messages and notifications to various endpoints, such as email, SMS, mobile push, and HTTP endpoints.
+
+**Use Cases:**
+- Sending event notifications and alerts to subscribers.
+- Mobile app push notifications.
+- Email notifications for application events.
+
+**Companies Using SNS:**
+- Airbnb: Uses Amazon SNS to send push notifications to users regarding booking updates and alerts.
+- Pinterest: Utilizes SNS for delivering email notifications to users.
+
+### Amazon Lambda (AWS Lambda)
+
+**Description:**
+Amazon Lambda is a serverless computing service that lets developers run code without managing servers. It automatically scales based on the number of requests, making it cost-effective for event-driven and on-demand computing tasks.
+
+**Use Cases:**
+- Building serverless applications and microservices.
+- Real-time file processing and data transformations.
+- Automated backups and data synchronization.
+
+**Companies Using Lambda:**
+- Netflix: Uses AWS Lambda for real-time video encoding and transcoding.
+- Coca-Cola: Utilizes Lambda for automated data processing and analytics.
 
