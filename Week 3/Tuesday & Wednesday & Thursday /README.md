@@ -5,6 +5,8 @@
 * [Node-Red on AWS EC2 instance](#install-node-red-on-aws-ec2-instance)
 * [Five Amazon Web Services](#amazon-web-services)
 
+---
+
 
 ## Install Node-Red on AWS EC2 Instance
 
@@ -55,6 +57,7 @@ in the cloud, and Node-Red is a flow-based programming tool that allows us to ea
 | ![Dashboard Example](img/ec2_on_my_laptop.png) |
 |:----------------------------------:|
 
+---
 ## MQTT connection ESP32s and AWS IoT as client with AWS IoT broker
 
 
@@ -108,7 +111,7 @@ Once the ESP32 devices are running the MQTT client and connected to AWS IoT Core
 | ![Dashboard Example](img/published_by_aws.png) |
 |:----------------------------------:|
 
-
+---
 ## Amazon Web Services 
 
 ### Amazon S3 (Simple Storage Service)
