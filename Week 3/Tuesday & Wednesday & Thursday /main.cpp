@@ -2,7 +2,7 @@
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
-#include <secret.h>
+#include <certificates.h>
 
 
 #define POTENTIOMTERPIN 34
