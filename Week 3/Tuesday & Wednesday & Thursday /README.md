@@ -45,3 +45,11 @@ in the cloud, and Node-Red is a flow-based programming tool that allows us to ea
 6. **Access Node-Red Dashboard:**
    - Open a web browser and navigate to your EC2 instance's public IP address or DNS name, followed by port 1880 (e.g., http://your_ec2_public_ip:1880).
    - You should see the Node-Red dashboard, and you can start creating flows and working with Node-Red.
+#### Node-Red running on EC2, and accessed by my browser
+| ![Dashboard Example](img/node_red_ec2.png) |
+|:----------------------------------:|
+
+#### EC2 terminal on PuTTY
+| ![Dashboard Example](img/ec2_on_my_laptop.png) |
+|:----------------------------------:|
+
