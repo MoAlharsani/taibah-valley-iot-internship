@@ -1,6 +1,7 @@
 # Install Node-Red on AWS EC2 instance, and establishing MQTT connection between ESP32s and AWS IoT core
 
-#### Overview
+[Click here to go to the MQTT connection section](#mqtt-connection-esp32s-and-aws-iot-as-client-with-aws-iot-broker)
+
 
 ### Install Node-Red on AWS EC2 Instance
 
@@ -52,4 +53,51 @@ in the cloud, and Node-Red is a flow-based programming tool that allows us to ea
 #### EC2 terminal on PuTTY
 | ![Dashboard Example](img/ec2_on_my_laptop.png) |
 |:----------------------------------:|
+
+## MQTT connection ESP32s and AWS IoT as client with AWS IoT broker
+
+
+In this task, we will establish an MQTT connection between ESP32 devices and AWS IoT Core. AWS IoT Core is a managed cloud service that enables communication between IoT devices and the cloud.
+
+### Prerequisites:
+
+1. **Create an AWS IoT Core Thing:**
+   - Sign in to your AWS account and navigate to AWS IoT Core.
+   - Create a new IoT Core "Thing" to represent your ESP32 devices.
+   - Note down the generated Thing name.
+
+2. **Generate X.509 Certificates:**
+   - Generate and download X.509 certificates for your ESP32 devices from AWS IoT Core.
+   - Keep the certificate files (certificate, private key, and root CA certificate) secure, as they will be used for secure TLS communication.
+
+### Setting Up ESP32:
+
+1. **Install Required Libraries:**
+   - Set up the ESP32 development environment if not already done.
+   - Include the necessary libraries for WiFi, MQTT, and TLS secure communication.
+
+2. **Upload the Sketch:**
+   - Use the Arduino IDE or any compatible IDE to upload the sketch to the ESP32.
+   - Modify the sketch to include your WiFi SSID, password, and AWS IoT Core endpoint (e.g., `a341dgduqrqsfy-ats.iot.eu-west-3.amazonaws.com`).
+     
+2. **Set Policies:**
+   - Attach appropriate policies to the X.509 certificates used by your ESP32 devices as in the file certificates.h
+   - The policies should allow the devices to publish data to the designated MQTT topics.
+     
+3. **Configure TLS and MQTT:**
+   - Configure the WiFi connection and set up the WiFiClientSecure object.
+   - Load the X.509 certificates into the WiFiClientSecure object to enable secure communication.
+
+4. **Connect to AWS IoT Core:**
+   - Establish a connection to the AWS IoT Core using the MQTT client (PubSubClient).
+   - Use the generated Thing name as the client ID for MQTT connection.
+
+5. **Publish Data:**
+   - Read data from the sensors (e.g., potentiometer and MQ2 gas sensor).
+   - Convert the sensor data to a string format and publish it to AWS IoT Core on specific MQTT topics.
+
+6. **Subscribe:**
+   - You can also subscribe to specific MQTT topics to receive commands or updates from AWS IoT Core.
+
+Once the ESP32 devices are running the MQTT client and connected to AWS IoT Core, they will securely publish sensor data to AWS IoT Core. The data can be further processed, stored, or visualized using AWS services or integrated with other applications.
 
