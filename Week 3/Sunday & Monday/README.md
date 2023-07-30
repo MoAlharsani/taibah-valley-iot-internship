@@ -1,4 +1,4 @@
-# Sending Sensor Data to Cloud and Displaying on Dashboard using MQTT
+# Sending Sensor Data to Cloud and Displaying it on a Dashboard using MQTT
 
 ## Overview
 This IoT code demonstrates how to send sensor data from an ESP32 microcontroller to the cloud using MQTT (Message Queuing Telemetry Transport) protocol. The MQTT broker, `broker.hivemq.com`, is utilized for this purpose.
