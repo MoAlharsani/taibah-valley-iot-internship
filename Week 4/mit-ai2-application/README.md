@@ -26,7 +26,7 @@ This project demonstrates how to create a simple mobile app using MIT App Invent
 4. The app displays the fetched image in the Image component.
 
 ## App Preview
-![App Inventor App Preview](/img/app_preview.jpeg)
+![App Inventor App Preview](img/app_preview.jpeg)
 
 ## Conclusion
 With MIT App Inventor, you've created a simple app that uses the website "thispersondoesnotexist.com" to generate random images of nonexistent people. This project demonstrates how to interact with web APIs and display images in a mobile app interface. By following these steps, you've learned how to build a basic app with dynamic content.
