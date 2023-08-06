@@ -34,7 +34,11 @@ This document outlines a project where an interactive interface is created using
 6. The interface also enables users to control LEDs by publishing messages to the "redLed" and "greenLed" topics.
 
 ## Interface Preview
-![App Inventor Interface](/img/interface_preview.png)
+<div>
+  <img src="/Week%204/img/interface_preview1.jpeg" alt="App Inventor App Preview 1" style="width: 300px; height: 600px;"/>
+  <img src="/Week%204/img/interface_preview.jpeg" alt="App Inventor App Preview 2" style="width: 300px; height: 600px;"/>
+</div>
+
 
 ## Conclusion
 By combining the capabilities of MIT App Inventor, MQTT protocol, and ESP32, you've successfully built an interactive IoT interface. This project demonstrates how to visualize sensor data and remotely control devices using a user-friendly mobile application. The integration of open-source tools like EMQX and App Inventor empowers you to create sophisticated IoT solutions with ease.
